@@ -1,0 +1,54 @@
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import java.lang.String?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+                xmlns="http://javafx.com/javafx/2.2">
+        <Label layoutX="16.0" layoutY="30.0" prefWidth="284.0" text="Name"/>
+        <TextField fx:id="txtName" layoutX="300.0" layoutY="30.0" prefWidth="277.0"/>
+        <Label layoutX="16.0" layoutY="64.0" prefWidth="284.0" text="Street"/>
+        <TextField fx:id="txtStreet" layoutX="300.0" layoutY="61.0" prefWidth="277.0"/>
+        <Label layoutX="16.0" layoutY="93.0" prefWidth="284.0" text="City"/>
+        <TextField fx:id="txtCity" layoutX="300.0" layoutY="90.0" prefWidth="277.0"/>
+        <Label layoutX="14.0" layoutY="118.0" prefWidth="284.0" text="State"/>
+        <TextField fx:id="txtState" layoutX="300.0" layoutY="115.0" prefWidth="277.0"/>
+        <Label layoutX="14.0" layoutY="146.0" prefWidth="284.0" text="Zip"/>
+        <TextField fx:id="txtZip" layoutX="300.0" layoutY="140.0" prefWidth="277.0"/>
+        <Label layoutX="12.0" layoutY="171.0" prefWidth="284.0" text="Choose One"/>
+        <CheckBox id="cbType" fx:id="cbApp" layoutX="300.0" layoutY="169.0"  text="App" onAction="#toggleMusic"/>
+        <CheckBox id="cbType" fx:id="cbMusic" layoutX="418.0" layoutY="169.0"  text="Music" onAction="#toggleMusic"/>
+        <Label fx:id="tymusic" layoutX="12.0" layoutY="199.0" prefWidth="284.0" text="Type of Music" onKeyReleased="#toggleMusic"/>
+        <ComboBox fx:id="cmMusic" id="cmMusic" layoutX="300.0" layoutY="198.0" prefHeight="21.0" prefWidth="277.0" promptText="Choose" onAction="#toggleMusic">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Item 1"/>
+                    <String fx:value="Item 2"/>
+                    <String fx:value="Item 3"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <RadioButton id="radioButtons" fx:id="rbGame" layoutX="300.0" layoutY="231.0"
+                     selected="true" text="GAME" onKeyReleased="#toggleMusic">
+            <toggleGroup>
+                <ToggleGroup fx:id="radioGroup"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton id="radioButtons" fx:id="rbProductivity" layoutX="378.0" layoutY="231.0"
+                     text="PRODUCTIVITY" toggleGroup="$radioGroup" onKeyReleased="#toggleMusic"/>
+        <RadioButton fx:id="rbEducation" layoutX="492.0" layoutY="231.0"  text="EDUCATION"
+                     toggleGroup="$radioGroup" onKeyReleased="#toggleMusic"/>
+        <Label fx:id="tyapp" layoutX="12.0" layoutY="231.0" prefWidth="284.0" text="Type of App" onKeyReleased="#toggleMusic"/>
+        <Label layoutX="12.0" layoutY="254.0" prefWidth="284.0" text="Enter Title"/>
+        <TextField fx:id="txtTitle" layoutX="299.0" layoutY="251.0" prefWidth="277.0"/>
+        <Label layoutX="13.0" layoutY="279.0" prefWidth="284.0" text="Date Purchased"/>
+        <TextField id="txtDate" fx:id="tbDatePurchased" layoutX="299.0" layoutY="276.0" prefWidth="277.0"/>
+        <Label layoutX="14.0" layoutY="304.0" prefWidth="284.0" text="Account Number"/>
+        <TextField id="txtAcctNumber" fx:id="tbAccountNumber" layoutX="299.0" layoutY="301.0" prefWidth="277.0"/>
+        <Button fx:id="submit" layoutX="12.0" layoutY="342.0"  prefWidth="277.0" text="Submit"/>
+        <Button fx:id="finish" layoutX="300.0" layoutY="342.0"  prefWidth="288.0" text="Finish"/>
+    </AnchorPane>
+</GridPane>
